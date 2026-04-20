@@ -214,6 +214,8 @@ const contactStatus = document.getElementById('contactStatus');
 const contactSubmit = document.getElementById('contactSubmit');
 const scrollVisuals = document.querySelectorAll('.scroll-visual');
 const parallaxMedia = document.querySelectorAll('.parallax-media');
+const teamSlider = document.getElementById('teamSlider');
+const teamSliderButtons = document.querySelectorAll('[data-team-slider]');
 
 function updateContactAccess() {
   const loggedInUser = localStorage.getItem('loggedInUser');
@@ -276,6 +278,26 @@ window.addEventListener('resize', updateScrollVisuals);
 window.addEventListener('resize', updateParallaxMedia);
 updateScrollVisuals();
 updateParallaxMedia();
+
+if (teamSlider && teamSliderButtons.length) {
+  teamSliderButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const firstCard = teamSlider.querySelector('.team-profile-card');
+
+      if (!firstCard) {
+        return;
+      }
+
+      const cardWidth = firstCard.getBoundingClientRect().width + 20;
+      const direction = button.dataset.teamSlider === 'next' ? 1 : -1;
+
+      teamSlider.scrollBy({
+        left: cardWidth * direction,
+        behavior: 'smooth'
+      });
+    });
+  });
+}
 
 if (contactLoginTrigger) {
   contactLoginTrigger.addEventListener('click', openModal);

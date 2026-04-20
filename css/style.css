@@ -448,13 +448,51 @@ section h2 {
   margin-top: 6px;
 }
 
+.team-slider-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.team-slider-button {
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.team-slider-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(216, 195, 165, 0.45);
+  transform: translateY(-1px);
+}
+
+.team-slider-window {
+  overflow: hidden;
+}
+
 .team-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
   gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  padding-bottom: 4px;
+}
+
+.team-grid::-webkit-scrollbar {
+  display: none;
 }
 
 .team-profile-card {
+  flex: 0 0 calc((100% - 40px) / 3);
+  min-width: 280px;
   display: grid;
   gap: 18px;
   padding: 22px;
@@ -464,6 +502,7 @@ section h2 {
   text-decoration: none;
   color: #ffffff;
   transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  scroll-snap-align: start;
 }
 
 .team-profile-card:hover {
@@ -475,6 +514,7 @@ section h2 {
 .team-portrait-frame {
   height: 260px;
   border-radius: 20px;
+  overflow: hidden;
   display: grid;
   place-items: center;
   font-size: 2rem;
@@ -485,6 +525,23 @@ section h2 {
     linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
     rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 14px;
+}
+
+.team-portrait-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 14px;
+  background: rgba(8, 8, 8, 0.75);
+}
+
+.team-portrait-placeholder {
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.18), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
+    rgba(255, 255, 255, 0.03);
 }
 
 .team-profile-copy h4 {
@@ -1130,6 +1187,15 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .team-section-head {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .team-slider-controls {
+    justify-content: flex-start;
+  }
+
   .about-slide {
     padding: 96px 6%;
   }
@@ -1153,6 +1219,11 @@ footer {
 
   .team-portrait-frame {
     height: 220px;
+  }
+
+  .team-profile-card {
+    flex-basis: 100%;
+    min-width: 100%;
   }
 
   .auth-shell {
