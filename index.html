@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GAWA, ANO TARA</title>
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div id="authToast" class="auth-toast" aria-live="polite"></div>
+<script>
+  window.AUTH_API_URL = 'http://127.0.0.1:3000';
+</script>
+
+<nav>
+  <h2>GAWA</h2>
+
+  <div>
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <button id="loginBtn">Login</button>
+</nav>
+
+<div id="loginModal" class="modal">
+  <div class="modal-content auth-shell">
+    <button id="closeModal" class="close-button" type="button" aria-label="Close authentication modal">
+      <span aria-hidden="true">×</span>
+    </button>
+    <div class="auth-main auth-main-minimal">
+      <div class="auth-header">
+        <h2 id="authTitle">Login</h2>
+        <p id="authSubtitle" class="auth-subtitle">Sign in to continue.</p>
+      </div>
+
+      <div class="auth-form-card">
+        <div class="auth-form">
+          <label class="auth-field">
+            <div class="input-wrap">
+              <span class="input-icon left-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+                  <path d="M4 6.5h16A1.5 1.5 0 0 1 21.5 8v8A1.5 1.5 0 0 1 20 17.5H4A1.5 1.5 0 0 1 2.5 16V8A1.5 1.5 0 0 1 4 6.5Zm0 1a.5.5 0 0 0-.5.5v.2l8.5 5.3 8.5-5.3V8a.5.5 0 0 0-.5-.5H4Zm16.5 1.88-6.9 4.3a3 3 0 0 1-3.2 0l-6.9-4.3V16a.5.5 0 0 0 .5.5h16a.5.5 0 0 0 .5-.5V9.38Z"/>
+                </svg>
+              </span>
+              <input id="username" type="text" placeholder="Email or username">
+            </div>
+          </label>
+
+          <label class="auth-field">
+            <div class="input-wrap">
+              <span class="input-icon left-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+                  <path d="M12 2.5a4.5 4.5 0 0 1 4.5 4.5v2H18A2.5 2.5 0 0 1 20.5 11.5v7A2.5 2.5 0 0 1 18 21H6A2.5 2.5 0 0 1 3.5 18.5v-7A2.5 2.5 0 0 1 6 9h1.5V7A4.5 4.5 0 0 1 12 2.5Zm6 7.5H6a1.5 1.5 0 0 0-1.5 1.5v7A1.5 1.5 0 0 0 6 20h12a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 18 10Zm-6-6.5A3.5 3.5 0 0 0 8.5 7v2h7V7A3.5 3.5 0 0 0 12 3.5Z"/>
+                </svg>
+              </span>
+              <input id="password" type="password" placeholder="Password">
+            </div>
+          </label>
+
+          <button id="authSubmit">Login</button>
+          <p class="auth-switch">
+            <span id="authSwitchLabel">No account yet?</span>
+            <button id="toggleAuthMode" type="button" class="text-button">Register here</button>
+          </p>
+        </div>
+
+        <div id="logoutPanel" class="logout-panel is-hidden">
+          <p class="auth-subtitle">You are currently signed in to this website.</p>
+          <button id="logoutSubmit">Sign Out</button>
+        </div>
+
+        <p id="loginMessage" class="auth-message"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="hero" class="hero">
+  <div class="hero-background" aria-hidden="true"></div>
+
+  <div class="overlay"></div>
+
+  <div class="hero-left">
+    <h1>GAWA, ANO TARA</h1>
+    <p>Designing the Future of Architecture</p>
+    <div class="scroll">↓ Scroll</div>
+  </div>
+
+</section>
+
+<section id="about" class="about fade clickable-section" data-section-target="#about">
+  <div class="about-motion" aria-hidden="true">
+    <span class="about-orb orb-one"></span>
+    <span class="about-orb orb-two"></span>
+    <span class="about-orb orb-three"></span>
+  </div>
+
+  <div class="about-slide">
+    <div class="about-hero">
+      <div class="section-lead">
+        <span class="section-tag">About Us</span>
+        <h2>The point where vision meets reality</h2>
+        <p>
+          Vertex Architects builds structures where ideas, people, and environment come together. With precision and
+          meticulous thinking, we transform individual vision into spaces that elevate everyday life and strengthen communities.
+        </p>
+      </div>
+
+      <div class="about-hero-visual">
+        <div class="visual-frame visual-frame-large about-image about-image-one scroll-visual" data-scroll-speed="0.14">
+          <span>Spatial Vision</span>
+        </div>
+        <div class="visual-frame visual-frame-small about-image about-image-two scroll-visual" data-scroll-speed="-0.1">
+          <span>Studio Identity</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-slide">
+    <div class="about-grid">
+      <article class="about-card about-story">
+        <span class="about-label">Studio Story</span>
+        <h3>Six designers, one shared vertex</h3>
+        <p>
+          Vertex Architects was established in 2026 by six designers: Ruth, Sofia, Lee, Thea, Khyle, and Chan. They
+          first met as students and studio partners, where late-night sessions and design competitions revealed that
+          their strongest work always emerged from collaboration.
+        </p>
+        <p>
+          Each founder brought a distinct strength in conceptual design, technical development, sustainability, interior
+          architecture, and urban environment. Together, they formed a studio rooted in teamwork, precision, and the
+          belief that exceptional architecture happens where different perspectives intersect.
+        </p>
+      </article>
+
+      <article class="about-card about-values">
+        <span class="about-label">Guiding Principles</span>
+        <div class="mini-panel">
+          <h3>Vision</h3>
+          <p>To become known for buildings that unite innovation, sustainability, and human interaction.</p>
+        </div>
+        <div class="mini-panel">
+          <h3>Mission</h3>
+          <p>To design the point where vision meets reality through structures that connect people, ideas, and place.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="about-slide">
+    <div class="about-grid secondary-grid">
+      <article class="about-card">
+        <span class="about-label">Core Values</span>
+        <h3>What defines Vertex</h3>
+        <ul class="about-points">
+          <li>Convergence: Great architecture emerges where diverse thoughts cross paths.</li>
+          <li>Precision: Everything we architect has purpose.</li>
+          <li>Endurance: Our creations are built to stand the test of time.</li>
+          <li>Context: Every design must respond to people, place, and culture.</li>
+        </ul>
+      </article>
+
+      <article class="about-card about-metrics">
+        <span class="about-label">Studio Snapshot</span>
+        <h3>A studio built on intersection</h3>
+        <div class="metric-grid">
+          <div class="metric-item">
+            <strong>6</strong>
+            <span>founding designers</span>
+          </div>
+          <div class="metric-item">
+            <strong>2026</strong>
+            <span>year established</span>
+          </div>
+          <div class="metric-item">
+            <strong>1</strong>
+            <span>shared design vision</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="about-slide">
+    <div class="team-section">
+      <div class="team-section-head">
+        <div>
+          <span class="about-label">Meet The Team</span>
+          <h3>Six members, one point of convergence</h3>
+        </div>
+      </div>
+
+      <div class="team-grid">
+        <a class="team-profile-card" href="ruth.html">
+          <div class="team-portrait-frame">01</div>
+          <div class="team-profile-copy">
+            <span class="team-role">Founding Designer</span>
+            <h4>Ruth</h4>
+            <p>Click to view full profile.</p>
+          </div>
+        </a>
+
+        <a class="team-profile-card" href="sofia.html">
+          <div class="team-portrait-frame">02</div>
+          <div class="team-profile-copy">
+            <span class="team-role">Founding Designer</span>
+            <h4>Sofia</h4>
+            <p>Click to view full profile.</p>
+          </div>
+        </a>
+
+        <a class="team-profile-card" href="lee.html">
+          <div class="team-portrait-frame">03</div>
+          <div class="team-profile-copy">
+            <span class="team-role">Founding Designer</span>
+            <h4>Lee</h4>
+            <p>Click to view full profile.</p>
+          </div>
+        </a>
+
+        <a class="team-profile-card" href="thea.html">
+          <div class="team-portrait-frame">04</div>
+          <div class="team-profile-copy">
+            <span class="team-role">Founding Designer</span>
+            <h4>Thea</h4>
+            <p>Click to view full profile.</p>
+          </div>
+        </a>
+
+        <a class="team-profile-card" href="khyle.html">
+          <div class="team-portrait-frame">05</div>
+          <div class="team-profile-copy">
+            <span class="team-role">Founding Designer</span>
+            <h4>Khyle</h4>
+            <p>Click to view full profile.</p>
+          </div>
+        </a>
+
+        <a class="team-profile-card" href="chan.html">
+          <div class="team-portrait-frame">06</div>
+          <div class="team-profile-copy">
+            <span class="team-role">Founding Designer</span>
+            <h4>Chan</h4>
+            <p>Click to view full profile.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="parallax fade" aria-label="Featured architectural visual">
+  <div class="parallax-media" data-parallax-speed="0.18"></div>
+  <div class="parallax-overlay"></div>
+  <div class="parallax-copy">
+    <span class="section-tag">Featured Perspective</span>
+    <h2>Architecture in motion, space in focus</h2>
+  </div>
+</section>
+
+<!-- project section -->
+
+<section id="projects" class="fade clickable-section" data-section-target="#projects">
+  <h2>Projects</h2>
+  <div class="projects">
+    <div class="project-card" onclick="openProject('project1.html')">
+      <img src="images/p1.jpg" alt="Project 1">
+      <h3>Project 1</h3>
+      <p>Concept residence with warm textures and cinematic lighting.</p>
+    </div>
+
+    <div class="project-card" onclick="openProject('project2.html')">
+      <img src="images/p2.jpg" alt="Project 2">
+      <h3>Project 2</h3>
+      <p>Interior transformation focused on glass, space, and flow.</p>
+    </div>
+
+    <div class="project-card" onclick="openProject('project3.html')">
+      <img src="images/p3.jpg" alt="Project 3">
+      <h3>Project 3</h3>
+      <p>Urban planning study shaped around movement and atmosphere.</p>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="fade">
+<h2>Services</h2>
+<div class="services">
+<div class="service">Architectural Design</div>
+<div class="service">Interior Design</div>
+<div class="service">Urban Planning</div>
+</div>
+</section>
+
+<section id="contact" class="fade">
+<h2>Contact</h2>
+<div class="contact-shell">
+  <div class="contact-copy">
+    <span class="section-tag">Feedback</span>
+    <h3>Let's connect</h3>
+    <p class="contact-intro">Reach Vertex Architects through email or social media.</p>
+
+    <div class="contact-cards">
+      <a class="contact-card" href="mailto:chanmichaelsuguitan@gmail.com">
+        <span class="contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+            <path d="M4 6.5h16A1.5 1.5 0 0 1 21.5 8v8A1.5 1.5 0 0 1 20 17.5H4A1.5 1.5 0 0 1 2.5 16V8A1.5 1.5 0 0 1 4 6.5Zm0 1a.5.5 0 0 0-.5.5v.2l8.5 5.3 8.5-5.3V8a.5.5 0 0 0-.5-.5H4Zm16.5 1.88-6.9 4.3a3 3 0 0 1-3.2 0l-6.9-4.3V16a.5.5 0 0 0 .5.5h16a.5.5 0 0 0 .5-.5V9.38Z"/>
+          </svg>
+        </span>
+        <span>
+          <strong>Email</strong>
+          <small>chanmichaelsuguitan@gmail.com</small>
+        </span>
+      </a>
+    </div>
+
+    <div class="social-links" aria-label="Social media links">
+      <a class="social-link" href="https://www.tiktok.com/@vertexarchitects" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+        <span class="contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+            <path d="M14 3c.3 2.1 1.6 3.9 3.6 4.8 1 .4 2 .6 3 .6v3.1a9 9 0 0 1-3.8-.9V16a5.5 5.5 0 1 1-5.5-5.5c.3 0 .7 0 1 .1v3.2a2.7 2.7 0 1 0 1.7 2.5V3H14Z"/>
+          </svg>
+        </span>
+        <span>TikTok</span>
+      </a>
+
+      <a class="social-link" href="https://www.facebook.com/vertexarchitects" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <span class="contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+            <path d="M13.5 21v-7.2H16l.4-2.8h-2.9V9.2c0-.8.3-1.4 1.5-1.4h1.6V5.2c-.3 0-1.2-.2-2.4-.2-2.4 0-4 1.4-4 4.1V11H8v2.8h2.2V21h3.3Z"/>
+          </svg>
+        </span>
+        <span>Facebook</span>
+      </a>
+
+      <a class="social-link" href="https://www.instagram.com/vertexarchitects" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <span class="contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+            <path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Zm0 1.8A2.2 2.2 0 0 0 4.8 7v10c0 1.2 1 2.2 2.2 2.2h10c1.2 0 2.2-1 2.2-2.2V7c0-1.2-1-2.2-2.2-2.2H7Zm10.6 1.4a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8A3.2 3.2 0 1 0 12 15.2 3.2 3.2 0 0 0 12 8.8Z"/>
+          </svg>
+        </span>
+        <span>Instagram</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="contact-gate" id="contactGate">
+    <span class="contact-gate-tag">Members Only</span>
+    <h4>Sign in to send feedback</h4>
+    <p>Log in first so only registered users can submit feedback through the contact form.</p>
+    <button type="button" class="contact-submit contact-login-trigger" id="contactLoginTrigger">Log In To Continue</button>
+  </div>
+
+  <form class="contact-form is-hidden" id="contactForm" action="https://formspree.io/f/xjgjoqbj" method="POST">
+    <label class="contact-field" for="feedbackName">Your Name</label>
+    <input id="feedbackName" name="Name" type="text" placeholder="Enter your name" required>
+
+    <label class="contact-field" for="feedbackEmail">Your Email</label>
+    <input id="feedbackEmail" name="email" type="email" placeholder="Enter your email address" required>
+
+    <label class="contact-field" for="feedbackSubject">Subject</label>
+    <input id="feedbackSubject" name="Subject" type="text" placeholder="What is this about?" required>
+
+    <label class="contact-field" for="feedbackMessage">Message</label>
+    <textarea id="feedbackMessage" name="message" rows="6" placeholder="Write your feedback here..." required></textarea>
+
+    <input type="hidden" name="_subject" value="New Vertex Architects Feedback">
+    <button type="submit" class="contact-submit" id="contactSubmit">Send Feedback</button>
+    <p class="contact-status" id="contactStatus" aria-live="polite"></p>
+  </form>
+</div>
+</section>
+
+<footer>
+<p>© 2026 GAWA, ANO TARA</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
