@@ -12,7 +12,12 @@
 
 <div id="authToast" class="auth-toast" aria-live="polite"></div>
 <script>
-  window.AUTH_API_URL = 'http://127.0.0.1:3000';
+  window.AUTH_API_URL =
+    window.location.protocol === 'file:' ||
+    window.location.hostname === '127.0.0.1' ||
+    window.location.hostname === 'localhost'
+      ? 'http://127.0.0.1:3000'
+      : '/api';
 </script>
 
 <nav>
