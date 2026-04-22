@@ -16,6 +16,10 @@ body {
   overflow-x: hidden;
 }
 
+img {
+  max-width: 100%;
+}
+
 .auth-toast {
   position: fixed;
   top: 88px;
@@ -66,6 +70,7 @@ nav {
 
 nav h2 {
   letter-spacing: 0.12em;
+  font-size: clamp(1rem, 1.8vw, 1.35rem);
 }
 
 nav > div {
@@ -107,8 +112,24 @@ nav a:hover {
 }
 
 .hero-left {
-  max-width: 400px;
+  width: min(100%, 640px);
   z-index: 2;
+}
+
+.hero-left h1 {
+  font-size: clamp(2.6rem, 7vw, 5.4rem);
+  line-height: 0.95;
+  text-wrap: balance;
+}
+
+.hero-left p {
+  margin-top: 14px;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+.scroll {
+  margin-top: 18px;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .hero-background {
@@ -143,7 +164,7 @@ section {
 
 section h2 {
   margin-bottom: 24px;
-  font-size: 2rem;
+  font-size: clamp(1.9rem, 4vw, 3.2rem);
 }
 
 .section-lead {
@@ -364,7 +385,7 @@ section h2 {
 
 .about-card h3 {
   margin-bottom: 16px;
-  font-size: 1.4rem;
+  font-size: clamp(1.25rem, 2.4vw, 1.7rem);
   line-height: 1.35;
 }
 
@@ -444,7 +465,7 @@ section h2 {
 }
 
 .team-section-head h3 {
-  font-size: 1.6rem;
+  font-size: clamp(1.3rem, 2.4vw, 1.8rem);
   margin-top: 6px;
 }
 
@@ -547,7 +568,7 @@ section h2 {
 }
 
 .team-profile-copy h4 {
-  font-size: 1.55rem;
+  font-size: clamp(1.3rem, 2.3vw, 1.55rem);
   margin-bottom: 8px;
 }
 
@@ -656,6 +677,21 @@ section h2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
+}
+
+.project-card,
+.service {
+  min-width: 0;
+}
+
+.project-card h3 {
+  margin-top: 14px;
+  margin-bottom: 8px;
+}
+
+.project-card p,
+.service {
+  line-height: 1.7;
 }
 
 .projects img {
@@ -1189,6 +1225,33 @@ footer {
   text-underline-offset: 4px;
 }
 
+@media (max-width: 1024px) {
+  nav {
+    padding: 18px 6%;
+  }
+
+  section,
+  .about-slide {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .about-hero,
+  .about-grid,
+  .contact-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero-visual {
+    min-height: 320px;
+  }
+
+  .team-profile-card {
+    flex-basis: min(100%, 460px);
+    min-width: min(100%, 460px);
+  }
+}
+
 @media (max-width: 768px) {
   nav {
     padding: 18px 6%;
@@ -1196,15 +1259,39 @@ footer {
     gap: 12px;
   }
 
+  nav h2 {
+    width: 100%;
+    text-align: center;
+  }
+
   nav > div {
     width: 100%;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 12px 16px;
+  }
+
+  #loginBtn {
+    width: 100%;
   }
 
   section {
     padding: 96px 6%;
     min-height: 100svh;
+  }
+
+  .hero {
+    padding-top: 120px;
+    padding-bottom: 64px;
+    align-items: flex-end;
+  }
+
+  .hero-left {
+    max-width: none;
+  }
+
+  .hero-left h1 {
+    font-size: clamp(2.3rem, 11vw, 3.8rem);
   }
 
   .parallax {
@@ -1271,7 +1358,8 @@ footer {
   }
 
   .contact-copy,
-  .contact-form {
+  .contact-form,
+  .contact-gate {
     padding: 22px;
   }
 
@@ -1285,5 +1373,38 @@ footer {
     max-width: none;
     min-width: min(280px, calc(100vw - 32px));
     width: calc(100vw - 32px);
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding-top: 16px;
+  }
+
+  section,
+  .about-slide {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .about-card,
+  .team-section,
+  .contact-copy,
+  .contact-form,
+  .contact-gate,
+  .service {
+    padding: 20px;
+  }
+
+  .team-portrait-frame {
+    height: 280px;
+  }
+
+  .team-profile-card {
+    padding: 18px;
+  }
+
+  .projects img {
+    height: 240px;
   }
 }
