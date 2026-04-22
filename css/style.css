@@ -474,6 +474,8 @@ section h2 {
 
 .team-slider-window {
   overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
 
 .team-grid {
@@ -491,8 +493,8 @@ section h2 {
 }
 
 .team-profile-card {
-  flex: 0 0 calc((100% - 40px) / 3);
-  min-width: 280px;
+  flex: 0 0 min(100%, 420px);
+  min-width: min(100%, 420px);
   display: grid;
   gap: 18px;
   padding: 22px;
@@ -512,7 +514,7 @@ section h2 {
 }
 
 .team-portrait-frame {
-  height: 260px;
+  height: 360px;
   border-radius: 20px;
   overflow: hidden;
   display: grid;
@@ -525,7 +527,7 @@ section h2 {
     linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
     rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 14px;
+  padding: 12px;
 }
 
 .team-portrait-image {
@@ -552,6 +554,18 @@ section h2 {
 .team-profile-copy p {
   color: rgba(255, 255, 255, 0.72);
   line-height: 1.7;
+}
+
+.team-preview-list {
+  margin-top: 14px;
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+}
+
+.team-preview-list li {
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.6;
 }
 
 .team-detail-summary {
@@ -1218,7 +1232,7 @@ footer {
   }
 
   .team-portrait-frame {
-    height: 220px;
+    height: 320px;
   }
 
   .team-profile-card {
