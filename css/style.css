@@ -568,6 +568,26 @@ section h2 {
   line-height: 1.6;
 }
 
+.team-profile-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #0f0f0f;
+  background: linear-gradient(135deg, #d8c3a5, #c08b5c);
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.team-profile-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(192, 139, 92, 0.24);
+  filter: brightness(1.03);
+}
+
 .team-detail-summary {
   max-width: 720px;
   margin-bottom: 22px;
