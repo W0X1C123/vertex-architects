@@ -854,6 +854,62 @@ section h2 {
   filter: brightness(1.03);
 }
 
+.project-detail-page {
+  gap: 40px;
+  padding-top: 140px;
+}
+
+.project-detail-hero {
+  max-width: 760px;
+}
+
+.project-detail-hero h1 {
+  font-size: clamp(2.4rem, 5vw, 4.4rem);
+  margin-bottom: 18px;
+}
+
+.project-detail-hero p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.8;
+}
+
+.project-visual-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.project-visual-card {
+  min-height: 320px;
+  padding: 16px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+}
+
+.project-visual-card-large {
+  grid-column: span 2;
+  min-height: 480px;
+}
+
+.project-visual-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 24px;
+  color: rgba(255, 255, 255, 0.72);
+  letter-spacing: 0.05em;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03)),
+    rgba(255, 255, 255, 0.03);
+  border: 1px dashed rgba(255, 255, 255, 0.16);
+}
+
 /* LOGIN MODAL */
 .modal {
   display: none;
@@ -1438,7 +1494,8 @@ footer {
   .contact-shell,
   .team-grid,
   .about-metrics .metric-grid,
-  .services {
+  .services,
+  .project-visual-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1483,6 +1540,12 @@ footer {
 
   .service-visual {
     height: 180px;
+  }
+
+  .project-visual-card,
+  .project-visual-card-large {
+    min-height: 300px;
+    grid-column: span 1;
   }
 
   .auth-shell {
@@ -1553,6 +1616,16 @@ footer {
 
   .service-visual {
     height: 160px;
+  }
+
+  .project-detail-page {
+    gap: 28px;
+    padding-top: 124px;
+  }
+
+  .project-visual-card,
+  .project-visual-card-large {
+    min-height: 240px;
   }
 
   .map-embed-card {
