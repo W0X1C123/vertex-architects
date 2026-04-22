@@ -756,14 +756,12 @@ section h2 {
 
 /* SERVICES */
 .services {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
-  flex-wrap: wrap;
 }
 
 .service {
-  flex: 1;
-  min-width: 200px;
   padding: 24px;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -773,6 +771,58 @@ section h2 {
   display: grid;
   gap: 14px;
   align-content: start;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.service:hover {
+  transform: translateY(-4px);
+  border-color: rgba(216, 195, 165, 0.4);
+  background: rgba(255, 255, 255, 0.11);
+}
+
+.service-visual {
+  height: 210px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.18));
+}
+
+.service-visual-architecture {
+  background-image: url('../images/p1.jpg');
+}
+
+.service-visual-construction {
+  background-image: url('../images/p2.jpg');
+}
+
+.service-visual-interior {
+  background-image: url('../images/p3.jpg');
+}
+
+.service-visual-3d {
+  background-image: url('../images/p4.jpg');
+}
+
+.service-visual-space {
+  background-image: url('../images/p5.jpg');
+}
+
+.service-visual-consultation {
+  background-image: url('../images/p6.jpg');
+}
+
+.service-visual-permit {
+  background-image: url('../images/bg2.jpg');
 }
 
 .service h3 {
@@ -1316,7 +1366,8 @@ footer {
 
   .about-hero,
   .about-grid,
-  .contact-shell {
+  .contact-shell,
+  .services {
     grid-template-columns: 1fr;
   }
 
@@ -1327,6 +1378,10 @@ footer {
   .team-profile-card {
     flex-basis: min(100%, 460px);
     min-width: min(100%, 460px);
+  }
+
+  .service-visual {
+    height: 190px;
   }
 }
 
@@ -1382,7 +1437,8 @@ footer {
   .about-hero,
   .contact-shell,
   .team-grid,
-  .about-metrics .metric-grid {
+  .about-metrics .metric-grid,
+  .services {
     grid-template-columns: 1fr;
   }
 
@@ -1423,6 +1479,10 @@ footer {
   .team-profile-card {
     flex-basis: 100%;
     min-width: 100%;
+  }
+
+  .service-visual {
+    height: 180px;
   }
 
   .auth-shell {
@@ -1489,6 +1549,10 @@ footer {
 
   .projects img {
     height: 240px;
+  }
+
+  .service-visual {
+    height: 160px;
   }
 
   .map-embed-card {
