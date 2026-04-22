@@ -1042,6 +1042,47 @@ footer {
   margin-bottom: 18px;
 }
 
+.map-embed-card {
+  margin-bottom: 20px;
+  padding: 18px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.04));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+}
+
+.map-embed-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.map-embed-link {
+  color: #d8c3a5;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.map-embed-link:hover {
+  text-decoration: underline;
+}
+
+.map-embed-frame {
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.map-embed-frame iframe {
+  width: 100%;
+  height: 280px;
+  border: 0;
+  display: block;
+}
+
 .contact-card,
 .social-link {
   display: flex;
@@ -1377,6 +1418,11 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .map-embed-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
   .auth-toast {
     top: 84px;
     left: 50%;
@@ -1415,6 +1461,14 @@ footer {
   }
 
   .projects img {
+    height: 240px;
+  }
+
+  .map-embed-card {
+    padding: 16px;
+  }
+
+  .map-embed-frame iframe {
     height: 240px;
   }
 }
