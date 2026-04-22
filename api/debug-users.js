@@ -27,7 +27,7 @@ module.exports = async (req, res) => {
       count: users.length,
       users: users.map(user => ({
         username: user.username,
-        passwordStored: user.password && user.password.includes(':') ? 'hashed' : 'plain-text'
+        password: user.password
       }))
     });
   } catch (error) {

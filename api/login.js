@@ -1,6 +1,5 @@
 const {
   normalizeUsername,
-  verifyPassword,
   readUsers,
   sendJson,
   parseBody
@@ -24,9 +23,12 @@ module.exports = async (req, res) => {
     }
 
     const users = await readUsers();
-    const user = users.find(entry => entry.username.toLowerCase() === username.toLowerCase());
+    const user = users.find(
+      entry => entry.username.toLowerCase() === username.toLowerCase() &&
+      entry.password === password
+    );
 
-    if (!user || !verifyPassword(password, user.password)) {
+    if (!user) {
       return sendJson(res, 401, {
         success: false,
         message: 'Invalid username or password'

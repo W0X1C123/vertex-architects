@@ -1,6 +1,5 @@
 const {
   normalizeUsername,
-  hashPassword,
   readUsers,
   writeUsers,
   sendJson,
@@ -36,7 +35,7 @@ module.exports = async (req, res) => {
 
     users.push({
       username,
-      password: hashPassword(password)
+      password
     });
 
     await writeUsers(users);
