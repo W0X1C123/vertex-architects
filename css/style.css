@@ -798,31 +798,31 @@ section h2 {
 }
 
 .service-visual-architecture {
-  background-image: url('../images/p1.jpg');
+  background-image: url('../images/service-architectural-design.jpg');
 }
 
 .service-visual-construction {
-  background-image: url('../images/p2.jpg');
+  background-image: url('../images/service-construction-renovation.png');
 }
 
 .service-visual-interior {
-  background-image: url('../images/p3.jpg');
+  background-image: url('../images/service-interior-design.webp');
 }
 
 .service-visual-3d {
-  background-image: url('../images/p4.jpg');
+  background-image: url('../images/service-3d-visualization.webp');
 }
 
 .service-visual-space {
-  background-image: url('../images/p5.jpg');
+  background-image: url('../images/service-space-planning.jpg');
 }
 
 .service-visual-consultation {
-  background-image: url('../images/p6.jpg');
+  background-image: url('../images/service-consultation-services.jpeg');
 }
 
 .service-visual-permit {
-  background-image: url('../images/bg2.jpg');
+  background-image: url('../images/service-permit-processing.webp');
 }
 
 .service h3 {
