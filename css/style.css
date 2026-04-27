@@ -54,7 +54,7 @@ img {
   border-color: rgba(255, 157, 157, 0.42);
 }
 
-/* NAVBAR */
+/* Navbar */
 nav {
   position: fixed;
   width: 100%;
@@ -80,7 +80,7 @@ nav h2 {
 }
 
 .site-logo img {
-  height: 54px;
+  height: 86px;
   width: auto;
   display: block;
   object-fit: contain;
@@ -111,7 +111,7 @@ nav a:hover {
   backdrop-filter: blur(14px);
 }
 
-/* HERO */
+/* Hero */
 .hero {
   height: 100vh;
   min-height: 100vh;
@@ -166,7 +166,7 @@ nav a:hover {
   z-index: -1;
 }
 
-/* SECTIONS */
+/* Shared section spacing and headings */
 section {
   padding: 120px 10%;
   min-height: 100vh;
@@ -217,6 +217,7 @@ section h2 {
   transform: translateY(0);
 }
 
+/* About section and long-form story layout */
 .about {
   position: relative;
   overflow: hidden;
@@ -462,6 +463,7 @@ section h2 {
   font-size: 0.9rem;
 }
 
+/* Team slider + member cards */
 .team-section {
   margin-top: 0;
   padding: 34px;
@@ -687,7 +689,7 @@ section h2 {
   50% { transform: translate3d(28px, -24px, 0) scale(1.04); }
 }
 
-/* PROJECTS */
+/* Homepage project cards */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -723,7 +725,7 @@ section h2 {
   border-color: rgba(255, 255, 255, 0.22);
 }
 
-/* PARALLAX */
+/* Full-width visual break */
 .parallax {
   position: relative;
   height: 70vh;
@@ -767,7 +769,7 @@ section h2 {
   line-height: 1.1;
 }
 
-/* SERVICES */
+/* Services cards */
 .services {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -867,6 +869,7 @@ section h2 {
   filter: brightness(1.03);
 }
 
+/* Project detail / compilation pages */
 .project-detail-page {
   gap: 40px;
   padding-top: 140px;
@@ -1041,7 +1044,7 @@ section h2 {
   display: none;
 }
 
-/* LOGIN MODAL */
+/* Login modal */
 .modal {
   display: none;
   position: fixed;
@@ -1268,6 +1271,7 @@ footer {
   color: rgba(255, 255, 255, 0.72);
 }
 
+/* Contact section */
 .contact-shell {
   position: relative;
   z-index: 2;
@@ -1540,6 +1544,7 @@ footer {
   text-underline-offset: 4px;
 }
 
+/* Tablet adjustments */
 @media (max-width: 1024px) {
   nav {
     padding: 18px 6%;
@@ -1576,6 +1581,7 @@ footer {
   }
 }
 
+/* Mobile layout */
 @media (max-width: 768px) {
   nav {
     padding: 18px 6%;
@@ -1594,7 +1600,7 @@ footer {
   }
 
   .site-logo img {
-    height: 46px;
+    height: 62px;
   }
 
   nav > div {
@@ -1747,6 +1753,7 @@ footer {
   }
 }
 
+/* Smaller phone screens */
 @media (max-width: 480px) {
   nav {
     padding-top: 16px;

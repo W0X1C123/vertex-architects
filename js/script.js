@@ -1,4 +1,4 @@
-// Fade in sections on scroll
+// Reveal sections as they enter the viewport.
 const faders = document.querySelectorAll('.fade');
 window.addEventListener('scroll', () => {
   faders.forEach(el => {
@@ -9,7 +9,7 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// Smooth scrolling for nav links
+// Keep the one-page navigation smooth instead of jumping.
 const links = document.querySelectorAll('nav a');
 links.forEach(link => {
   link.addEventListener('click', e => {
@@ -21,14 +21,14 @@ links.forEach(link => {
   });
 });
 
-// Mouse parallax on hero
+// Slight mouse movement on the hero so it does not feel static.
 document.addEventListener('mousemove', e => {
   const x = (e.clientX / window.innerWidth - 0.5) * 20;
   const y = (e.clientY / window.innerHeight - 0.5) * 20;
   document.querySelector('.hero').style.transform = `translate(${x}px, ${y}px)`;
 });
 
-// LOGIN MODAL
+// Login / register modal state
 const loginBtn = document.getElementById('loginBtn');
 const modal = document.getElementById('loginModal');
 const closeModal = document.getElementById('closeModal');
@@ -217,6 +217,7 @@ const parallaxMedia = document.querySelectorAll('.parallax-media');
 const teamSlider = document.getElementById('teamSlider');
 const teamSliderButtons = document.querySelectorAll('[data-team-slider]');
 
+// Contact form stays hidden until someone is signed in.
 function updateContactAccess() {
   const loggedInUser = localStorage.getItem('loggedInUser');
   const isLoggedIn = Boolean(loggedInUser);
@@ -237,6 +238,7 @@ if (savedUser) {
 updateAuthView();
 updateContactAccess();
 
+// Subtle motion inside the about section.
 function updateScrollVisuals() {
   if (!scrollVisuals.length) {
     return;
@@ -255,6 +257,7 @@ function updateScrollVisuals() {
   });
 }
 
+// Move the wide image block a bit while scrolling.
 function updateParallaxMedia() {
   if (!parallaxMedia.length) {
     return;
@@ -280,6 +283,7 @@ updateScrollVisuals();
 updateParallaxMedia();
 
 if (teamSlider && teamSliderButtons.length) {
+  // Slide the team cards one card at a time.
   teamSliderButtons.forEach(button => {
     button.addEventListener('click', () => {
       const firstCard = teamSlider.querySelector('.team-profile-card');
@@ -304,6 +308,7 @@ if (contactLoginTrigger) {
 }
 
 if (contactForm) {
+  // Send the feedback form through Formspree and report the result inline.
   contactForm.addEventListener('submit', async event => {
     event.preventDefault();
 
@@ -352,6 +357,7 @@ if (contactForm) {
   });
 }
 
+// Simple page switch for the project preview cards.
 function openProject(page) {
   window.location.href = page;
 }
