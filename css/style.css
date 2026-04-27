@@ -873,41 +873,142 @@ section h2 {
   line-height: 1.8;
 }
 
-.project-visual-grid {
+.project-compilation-page {
+  gap: 52px;
+}
+
+.project-compilation-surface {
+  --project-tile-image: url('../images/p1.jpg');
+}
+
+.project-full-surface-page {
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 0;
+}
+
+.project-compilation-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
+  align-items: start;
 }
 
-.project-visual-card {
-  min-height: 320px;
-  padding: 16px;
-  border-radius: 24px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(16px);
+.project-compilation-tile {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
 }
 
-.project-visual-card-large {
+.tile-square {
+  aspect-ratio: 1 / 1;
+}
+
+.tile-wide {
   grid-column: span 2;
-  min-height: 480px;
+  aspect-ratio: 1.65 / 1;
 }
 
-.project-visual-placeholder {
+.tile-tall {
+  aspect-ratio: 0.82 / 1;
+}
+
+.tile-shift-up {
+  transform: translateY(-20px);
+}
+
+.tile-shift-down {
+  transform: translateY(22px);
+}
+
+.tile-tilt-left {
+  transform: rotate(-1.4deg);
+}
+
+.tile-tilt-right {
+  transform: rotate(1.4deg);
+}
+
+.project-compilation-placeholder {
   width: 100%;
   height: 100%;
   min-height: 100%;
-  border-radius: 18px;
   display: grid;
   place-items: center;
   text-align: center;
-  padding: 24px;
+  padding: 20px;
   color: rgba(255, 255, 255, 0.72);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03)),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.015)),
     rgba(255, 255, 255, 0.03);
-  border: 1px dashed rgba(255, 255, 255, 0.16);
+}
+
+.project-compilation-placeholder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 38%),
+    linear-gradient(180deg, transparent 55%, rgba(0, 0, 0, 0.12));
+  pointer-events: none;
+}
+
+.project-surface-grid {
+  position: relative;
+  flex: 1;
+  min-height: calc(100vh - 220px);
+  margin-top: 8px;
+  border-radius: 0;
+  overflow: hidden;
+  background-image:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(0, 0, 0, 0.08)),
+    var(--project-tile-image);
+  background-size: cover;
+  background-position: center;
+}
+
+.project-detail-hero-minimal {
+  max-width: none;
+}
+
+.project-detail-hero-minimal h1 {
+  margin-bottom: 0;
+}
+
+.project-surface-grid::before,
+.project-surface-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.project-surface-grid::before {
+  background:
+    repeating-linear-gradient(
+      -28deg,
+      transparent 0 150px,
+      rgba(255, 255, 255, 0.22) 150px 152px,
+      rgba(0, 0, 0, 0.18) 152px 154px,
+      transparent 154px 304px
+    );
+}
+
+.project-surface-grid::after {
+  background:
+    repeating-linear-gradient(
+      62deg,
+      transparent 0 260px,
+      rgba(255, 255, 255, 0.18) 260px 262px,
+      rgba(0, 0, 0, 0.16) 262px 264px,
+      transparent 264px 524px
+    );
+  opacity: 0.9;
+}
+
+.project-surface-tile {
+  display: none;
 }
 
 /* LOGIN MODAL */
@@ -1439,6 +1540,10 @@ footer {
   .service-visual {
     height: 190px;
   }
+
+  .project-surface-grid {
+    min-height: calc(100vh - 220px);
+  }
 }
 
 @media (max-width: 768px) {
@@ -1495,7 +1600,8 @@ footer {
   .team-grid,
   .about-metrics .metric-grid,
   .services,
-  .project-visual-grid {
+  .project-compilation-grid,
+  .project-surface-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1542,10 +1648,30 @@ footer {
     height: 180px;
   }
 
-  .project-visual-card,
-  .project-visual-card-large {
-    min-height: 300px;
-    grid-column: span 1;
+  .project-surface-grid {
+    min-height: calc(100vh - 240px);
+  }
+
+  .project-surface-grid::before {
+    background:
+      repeating-linear-gradient(
+        -28deg,
+        transparent 0 110px,
+        rgba(255, 255, 255, 0.22) 110px 112px,
+        rgba(0, 0, 0, 0.18) 112px 114px,
+        transparent 114px 224px
+      );
+  }
+
+  .project-surface-grid::after {
+    background:
+      repeating-linear-gradient(
+        62deg,
+        transparent 0 190px,
+        rgba(255, 255, 255, 0.18) 190px 192px,
+        rgba(0, 0, 0, 0.16) 192px 194px,
+        transparent 194px 384px
+      );
   }
 
   .auth-shell {
@@ -1623,9 +1749,8 @@ footer {
     padding-top: 124px;
   }
 
-  .project-visual-card,
-  .project-visual-card-large {
-    min-height: 240px;
+  .project-surface-grid {
+    min-height: calc(100vh - 210px);
   }
 
   .map-embed-card {
