@@ -73,6 +73,19 @@ nav h2 {
   font-size: clamp(1rem, 1.8vw, 1.35rem);
 }
 
+.site-logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.site-logo img {
+  height: 54px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
 nav > div {
   display: flex;
   align-items: center;
@@ -881,10 +894,16 @@ section h2 {
   --project-tile-image: url('../images/p1.jpg');
 }
 
+.project-surface-body {
+  background: #050505;
+}
+
 .project-full-surface-page {
+  width: 100vw;
   min-height: 100vh;
-  padding-top: 120px;
+  padding: 120px 0 0;
   padding-bottom: 0;
+  justify-content: flex-start;
 }
 
 .project-compilation-grid {
@@ -957,8 +976,9 @@ section h2 {
 .project-surface-grid {
   position: relative;
   flex: 1;
-  min-height: calc(100vh - 220px);
-  margin-top: 8px;
+  width: 100vw;
+  min-height: calc(100vh - 120px);
+  margin-top: 0;
   border-radius: 0;
   overflow: hidden;
   background-image:
@@ -969,11 +989,21 @@ section h2 {
 }
 
 .project-detail-hero-minimal {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 0 10% 18px;
   max-width: none;
 }
 
 .project-detail-hero-minimal h1 {
   margin-bottom: 0;
+  text-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+}
+
+.project-detail-hero-minimal .section-tag {
+  background: rgba(0, 0, 0, 0.26);
+  backdrop-filter: blur(10px);
 }
 
 .project-surface-grid::before,
@@ -1542,7 +1572,7 @@ footer {
   }
 
   .project-surface-grid {
-    min-height: calc(100vh - 220px);
+    min-height: calc(100vh - 120px);
   }
 }
 
@@ -1556,6 +1586,15 @@ footer {
   nav h2 {
     width: 100%;
     text-align: center;
+  }
+
+  .site-logo {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .site-logo img {
+    height: 46px;
   }
 
   nav > div {
@@ -1649,7 +1688,7 @@ footer {
   }
 
   .project-surface-grid {
-    min-height: calc(100vh - 240px);
+    min-height: calc(100vh - 132px);
   }
 
   .project-surface-grid::before {
@@ -1749,8 +1788,12 @@ footer {
     padding-top: 124px;
   }
 
+  .project-detail-hero-minimal {
+    padding: 0 6% 14px;
+  }
+
   .project-surface-grid {
-    min-height: calc(100vh - 210px);
+    min-height: calc(100vh - 124px);
   }
 
   .map-embed-card {
